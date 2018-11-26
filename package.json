@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/yanjian2323/VUE-UI/issues"
   },
-  "homepage": "https://github.com/yanjian2323/VUE-UI#readme"
+  "homepage": "https://github.com/yanjian2323/VUE-UI#readme",
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
 }
