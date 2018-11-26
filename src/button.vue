@@ -1,12 +1,11 @@
 <template>
     <button class="y-button" :class="{[`icon-${iconPosition}`]: true}">
-        <svg class="icon">
-            <use :xlink:href=`#i-${icon}`></use>
-        </svg>
+        <y-icon :icon="icon"></y-icon>
         <slot></slot>
     </button>
 </template>
 <script>
+    import yIcon from './icon';
     export default {
         props: {
             icon: {
@@ -16,6 +15,9 @@
                 type: String,
                 default: 'left'
             }
+        },
+        components: {
+            yIcon
         }
     }
 </script>
@@ -27,9 +29,5 @@
         border-radius: var(--border-radius);
         border: 1px solid var(--border-color);
         background-color: var(--button-bg);
-    }
-    .icon {
-        width: 1em;
-        height: 1em;
     }
 </style>
