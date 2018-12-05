@@ -30,10 +30,13 @@
         border: 1px solid var(--border-color);
         background-color: var(--button-bg);
         &:hover{
-            border: var(--border-color-hover);
+            border-color: var(--border-color-hover);
         }
         &:active {
             background-color: var(--button-active-bg);
+        }
+        &:focus{
+            outline: none;
         }
     }
 </style>
