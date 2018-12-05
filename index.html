@@ -25,9 +25,13 @@
 <body>
 
     <div id="app">
-        <y-button icon="setting">按钮</y-button>
+        <y-button icon="setting" :loading="loading" @click="loading=!loading">按钮</y-button>
+        <y-button>无icon</y-button>
+        <y-button icon="setting" icon-position="right">右边</y-button>
+        <y-button icon="download">下载</y-button>
+        <y-button :loading="true">加载中</y-button>
     </div>
     <script src="src/app.js"></script>
-    <script src="//at.alicdn.com/t/font_936378_ilur250uv8d.js"></script>
+    <script src="//at.alicdn.com/t/font_936378_zjufxfrib7e.js"></script>
 </body>
 </html>
