@@ -8,7 +8,7 @@
         display: inline-flex;
         > .y-button {
             border-radius: 0;
-            :not(:first-child){
+            &:not(:first-child){
                 margin-left: -1px;
             }
             &:first-child {
