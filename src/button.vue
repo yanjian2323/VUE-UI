@@ -21,7 +21,7 @@
         }
     }
 </script>
-<style>
+<style lang="scss">
     .y-button {
         font-size: var(--font-size);
         height: var(--button-height);
@@ -29,11 +29,11 @@
         border-radius: var(--border-radius);
         border: 1px solid var(--border-color);
         background-color: var(--button-bg);
-    }
-    .y-button:hover{
-        border: var(--border-color-hover);
-    }
-    .y-button:active {
-        background-color: var(--button-active-bg);
+        &:hover{
+            border: var(--border-color-hover);
+        }
+        &:active {
+            background-color: var(--button-active-bg);
+        }
     }
 </style>
