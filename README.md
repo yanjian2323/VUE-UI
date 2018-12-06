@@ -6,9 +6,9 @@
 
 
 ## 开始使用
-1. 安装yanjian-vue-ui
-```npm i -D yanjian-vue-ui
-
+1. 安装 yanjian-vue-ui
+```
+npm i -D yanjian-vue-ui
 ```
 2. 引入css(后续会改成用sass变量引入)
 ```css {
@@ -24,6 +24,6 @@
 
 ```
 3. 引入组件
-```import { Button, ButtonGroup } from 'yanjian-vue-ui'
-
+```
+import { Button, ButtonGroup } from 'yanjian-vue-ui'
 ```
