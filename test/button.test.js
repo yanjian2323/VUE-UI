@@ -54,7 +54,7 @@ describe('Button', () => {
         const vm = new Constructor({
             propsData: {
                 icon: 'setting',
-                iconPosition: 'right'
+                iconPosition: 'right '
             }
         })
         vm.$mount(div)
