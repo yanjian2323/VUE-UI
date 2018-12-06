@@ -3,6 +3,18 @@
         <slot></slot>
     </div>
 </template>
+<script>
+    export default {
+        mounted() {
+            Array.from(this.$el.children).forEach((node) => {
+                if (node.tagName.toLowerCase() !== 'button') {
+                    console.log(node.tagName)
+                    console.warn(`button-group的子节点必须是button,而你传入的是${node.tagName.toLowerCase()}`)
+                }
+            })
+        }
+    }
+</script>
 <style lang="scss" scoped>
     .y-button-group {
         display: inline-flex;
