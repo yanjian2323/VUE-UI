@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/yanjian2323/VUE-UI#readme",
   "dependencies": {
+    "col": "^0.1.0",
+    "row": "0.0.1",
     "vue": "^2.5.17",
     "vue-hot-reload-api": "^2.3.1"
   },
