@@ -42,7 +42,6 @@ describe('Button', () => {
         vm.$mount(div)
         const svgNode = vm.$el.querySelector('svg')
         const { order } = getComputedStyle(svgNode)
-        console.log(order)
         expect(order).to.eq('1')
         vm.$el.remove()
         vm.$destroy()
@@ -54,7 +53,7 @@ describe('Button', () => {
         const vm = new Constructor({
             propsData: {
                 icon: 'setting',
-                iconPosition: 'right '
+                iconPosition: 'right'
             }
         })
         vm.$mount(div)

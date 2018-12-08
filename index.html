@@ -42,6 +42,12 @@
             <y-input readonly></y-input>
             <y-input disabled></y-input>
             <y-input error="用户名不能少于6个字"></y-input>
+            <button @click="message+=1">+1</button>
+        </p>
+        <p>
+            <y-input v-model="message"></y-input>
+            {{message}}
+            <button @click="message+=1">+1</button>
         </p>
     </div>
     <script src="src/app.js"></script>

@@ -15,6 +15,7 @@ Vue.component('y-input', Input)
 new Vue({
     el: '#app',
     data: {
-        loading: false
+        loading: false,
+        message: '1'
     }
 });

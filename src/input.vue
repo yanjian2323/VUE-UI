@@ -1,6 +1,13 @@
 <template>
     <div class="input-wrapper" :class="{error}">
-        <input type="text" :value="value" :disabled="disabled" :readonly="readonly" />
+        <input type="text"
+               :value="value"
+               :disabled="disabled"
+               :readonly="readonly"
+               @change="$emit('change', $event.target.value)"
+               @input="$emit('input', $event.target.value)"
+               @blur="$emit('blur', $event.target.value)"
+               @focus="$emit('focus', $event.target.value)" />
         <template v-if="error">
             <y-icon class="icon-error" icon="error"></y-icon>
             <span class="error-msg">{{error}}</span>
