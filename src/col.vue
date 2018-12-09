@@ -43,10 +43,6 @@
     $offset-prefix: offset-;
     $cols: 24;
     .col{
-        display: inline-flex;
-        width: 50%;
-        height: 30px;
-
         @for $n from 1 through $cols {
             &.#{$class-prefix}#{$n} {
                 width: ($n / $cols) * 100%;
