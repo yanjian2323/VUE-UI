@@ -9,6 +9,7 @@ import Layout from './layout'
 import Header from './header'
 import Content from './content'
 import Footer from './footer'
+import Sider from './sider'
 
 import chai from 'chai'
 import spies from 'chai-spies'
@@ -24,6 +25,7 @@ Vue.component('y-layout', Layout)
 Vue.component('y-header', Header)
 Vue.component('y-content', Content)
 Vue.component('y-footer', Footer)
+Vue.component('y-sider', Sider)
 new Vue({
     el: '#app',
     data: {

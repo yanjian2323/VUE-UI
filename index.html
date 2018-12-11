@@ -10,10 +10,12 @@
         * {
             box-sizing: border-box;
         }
+
         *::before,
-        *::after{
+        *::after {
             box-sizing: border-box;
         }
+
         :root {
             --font-size: 14px;
             --color: #333;
@@ -24,20 +26,25 @@
             --button-bg: white;
             --button-active-bg: #eee;
         }
-        body{
+
+        body {
             font-size: var(--font-size);
         }
-        .column{
+
+        .column {
             border: 1px solid green;
             width: 100%;
         }
+
         .g-row1 {
             height: 30px;
             background: gray;
         }
-        .layout{
+
+        .wrapper {
             height: 100vh;
         }
+
         .box {
             border: 1px solid green;
         }
@@ -45,14 +52,17 @@
 </head>
 <body>
 
-    <div id="app">
-       <y-layout class="layout">
-           <y-header class="box">this is header</y-header>
-           <y-content class="box">this is content</y-content>
-           <y-footer class="box">this is footer</y-footer>
-       </y-layout>
-    </div>
-    <script src="src/app.js"></script>
-    <script src="//at.alicdn.com/t/font_936378_wymsm87uqni.js"></script>
+<div id="app">
+    <y-layout class="wrapper">
+        <y-sider>this is slider</y-sider>
+        <y-layout>
+            <y-header class="box">this is header</y-header>
+            <y-content class="box">this is content</y-content>
+            <y-footer class="box">this is footer</y-footer>
+        </y-layout>
+    </y-layout>
+</div>
+<script src="src/app.js"></script>
+<script src="//at.alicdn.com/t/font_936378_wymsm87uqni.js"></script>
 </body>
 </html>

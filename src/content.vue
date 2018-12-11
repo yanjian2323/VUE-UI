@@ -4,7 +4,9 @@
     </div>
 </template>
 <script>
-
+    export default {
+        name: 'YContent'
+    }
 </script>
 <style scoped lang="scss">
     .content{

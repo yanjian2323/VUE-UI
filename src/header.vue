@@ -4,7 +4,9 @@
    </div>
 </template>
 <script>
-
+   export default {
+       name: 'YHeader'
+   }
 </script>
 <style lang="scss" scoped>
    .header {
