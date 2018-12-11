@@ -35,19 +35,22 @@
             height: 30px;
             background: gray;
         }
+        .layout{
+            height: 100vh;
+        }
+        .box {
+            border: 1px solid green;
+        }
     </style>
 </head>
 <body>
 
     <div id="app">
-        <y-row>
-            <y-col span="24" :narrow-pc="{span:6}" :pc="{span:4}" :wide-pc="{span:2}">
-                <div class="column">1</div>
-            </y-col>
-            <y-col span="24" :narrow-pc="{span:18}" :pc="{span:20}" :wide-pc="{span:22}">
-                <div class="column">2</div>
-            </y-col>
-        </y-row>
+       <y-layout class="layout">
+           <y-header class="box">this is header</y-header>
+           <y-content class="box">this is content</y-content>
+           <y-footer class="box">this is footer</y-footer>
+       </y-layout>
     </div>
     <script src="src/app.js"></script>
     <script src="//at.alicdn.com/t/font_936378_wymsm87uqni.js"></script>
