@@ -11,14 +11,10 @@
             },
             align: {
                 type: String,
+                default: 'left',
                 validator (val) {
                     return ['left', 'center', 'right'].includes(val)
                 }
-            }
-        },
-        data () {
-            return {
-                rowClass: `align-${this.align}`
             }
         },
         mounted () {
@@ -31,6 +27,9 @@
                     marginLeft: `-${gutter/2}px`,
                     marginRight: `-${gutter/2}px`,
                 }
+            },
+            rowClass () {
+                return `align-${this.align}`
             }
         }
     }
