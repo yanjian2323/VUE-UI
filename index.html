@@ -40,82 +40,14 @@
 <body>
 
     <div id="app">
-        <y-button icon="setting" :loading="loading" @click="loading=!loading">按钮</y-button>
-        <y-button>无icon</y-button>
-        <y-button icon="setting" icon-position="right">右边</y-button>
-        <y-button icon="download">下载</y-button>
-        <y-button :loading="true">加载中</y-button>
-        <p>
-            <y-button-group>
-                <y-button icon="left">上一页</y-button>
-                <y-button>中间</y-button>
-                <y-button icon="right" icon-position="right">下一页</y-button>
-            </y-button-group>
-        </p>
-        <p>
-            <y-input></y-input>
-            <y-input readonly></y-input>
-            <y-input disabled></y-input>
-            <y-input error="用户名不能少于6个字"></y-input>
-            <button @click="message+=1">+1</button>
-        </p>
-        <p>
-            <y-input v-model="message"></y-input>
-            {{message}}
-            <button @click="message+=1">+1</button>
-        </p>
-        <div>
-            <y-row>
-                <y-col span="10"><div class="column">1</div></y-col>
-                <y-col span="4"><div class="column">2</div></y-col>
-                <y-col span="10"><div class="column">3</div></y-col>
-            </y-row>
-            <y-row>
-                <y-col span="2"><div class="column">1</div></y-col>
-                <y-col span="4"><div class="column">2</div></y-col>
-                <y-col span="18"><div class="column">3</div></y-col>
-            </y-row>
-            <y-row>
-                <y-col span="2"><div class="column">1</div></y-col>
-                <y-col span="4"><div class="column">2</div></y-col>
-                <y-col span="9"><div class="column">3</div></y-col>
-                <y-col span="9"><div class="column">4</div></y-col>
-            </y-row>
-            <y-row>
-                <y-col span="2"><div class="column">1</div></y-col>
-                <y-col span="4"><div class="column">2</div></y-col>
-                <y-col span="9" offset="9"><div class="column">3</div></y-col>
-            </y-row>
-            <y-row gutter="10">
-                <y-col span="2"><div class="column">1</div></y-col>
-                <y-col span="4"><div class="column">2</div></y-col>
-                <y-col span="9"><div class="column">3</div></y-col>
-                <y-col span="9"><div class="column">4 </div></y-col>
-            </y-row>
-        </div>
-        <div>
-            <y-row class="g-row1">
-                <y-col span="9">
-                    <y-row align="left">
-                        <y-col>1</y-col>
-                        <y-col>2</y-col>
-                        <y-col>3</y-col>
-                        <y-col>4</y-col>
-                    </y-row>
-                </y-col>
-                <y-col span="15">
-                    <y-row align="right">
-                        <y-col>1</y-col>
-                        <y-col>2</y-col>
-                        <y-col>3</y-col>
-                        <y-col>4</y-col>
-                        <y-col>5</y-col>
-                        <y-col>6</y-col>
-                        <y-col>7</y-col>
-                    </y-row>
-                </y-col>
-            </y-row>
-        </div>
+        <y-row>
+            <y-col span="18" :phone="{span:12}" :ipad="{span:8}" :narrow-pc="{span:6}" :pc="{span:4}" :wide-pc="{span:2}">
+                <div class="column">1</div>
+            </y-col>
+            <y-col span="6" :phone="{span:12}" :ipad="{span:16}" :narrow-pc="{span:18}" :pc="{span:20}" :wide-pc="{span:22}">
+                <div class="column">2</div>
+            </y-col>
+        </y-row>
     </div>
     <script src="src/app.js"></script>
     <script src="//at.alicdn.com/t/font_936378_wymsm87uqni.js"></script>
