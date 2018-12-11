@@ -36,10 +36,6 @@
             offset: {
                 type: [String, Number]
             },
-            phone: {
-                type: Object,
-                validator,
-            },
             ipad: {
                 type: Object,
                 validator,
@@ -65,9 +61,8 @@
         computed: {
             colClass() {
                 let cls = [];
-                const {span, offset, phone, ipad, narrowPc, pc, widePc} = this;
-                cls.push(createColClasses({ span, offset }, ''))
-                cls.push(createColClasses(phone, 'phone-'))
+                const {span, offset, ipad, narrowPc, pc, widePc} = this;
+                cls.push(createColClasses({span, offset}, ''))
                 cls.push(createColClasses(ipad, 'ipad-'))
                 cls.push(createColClasses(narrowPc, 'narrow-pc-'))
                 cls.push(createColClasses(pc, 'pc-'))
@@ -89,6 +84,7 @@
     $offset-prefix: offset-;
     $cols: 24;
     .col {
+        /*flex-shrink: 0;*/
         @for $n from 1 through $cols {
             &.#{$class-prefix}#{$n} {
                 width: ($n / $cols) * 100%;
@@ -99,7 +95,7 @@
                 margin-left: ($n / $cols) * 100%;
             }
         }
-        @media (min-width: 567px) and (max-width: 768px) {
+        @media (min-width: 568px) {
             $class-prefix: col-ipad-;
             $offset-prefix: offset-ipad-;
             @for $n from 1 through $cols {
@@ -113,7 +109,7 @@
                 }
             }
         }
-        @media (min-width: 769px) and (max-width: 992px) {
+        @media (min-width: 768px) {
             $class-prefix: col-narrow-pc-;
             $offset-prefix: offset-narrow-pc-;
             @for $n from 1 through $cols {
@@ -127,7 +123,7 @@
                 }
             }
         }
-        @media (min-width: 993px) and (max-width: 1200px) {
+        @media (min-width: 992px) {
             $class-prefix: col-pc-;
             $offset-prefix: offset-pc-;
             @for $n from 1 through $cols {
@@ -141,7 +137,7 @@
                 }
             }
         }
-        @media (min-width: 1201px) {
+        @media (min-width: 1200px) {
             $class-prefix: col-wide-pc-;
             $offset-prefix: offset-wide-pc-;
             @for $n from 1 through $cols {
