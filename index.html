@@ -53,14 +53,18 @@
 <body>
 
 <div id="app">
-    <y-layout class="wrapper">
-        <y-sider>this is slider</y-sider>
-        <y-layout>
-            <y-header class="box">this is header</y-header>
-            <y-content class="box">this is content</y-content>
-            <y-footer class="box">this is footer</y-footer>
-        </y-layout>
-    </y-layout>
+    <y-tab>
+        <y-tab-nav>
+            <y-tab-item>美女</y-tab-item>
+            <y-tab-item>帅哥</y-tab-item>
+            <y-tab-item>其他</y-tab-item>
+        </y-tab-nav>
+       <y-tab-content>
+           <y-tab-panel>this is 美女</y-tab-panel>
+           <y-tab-panel>this is 帅哥</y-tab-panel>
+           <y-tab-panel>this is 其他</y-tab-panel>
+       </y-tab-content>
+    </y-tab>
 </div>
 <script src="src/app.js"></script>
 <script src="//at.alicdn.com/t/font_936378_wymsm87uqni.js"></script>

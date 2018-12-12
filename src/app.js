@@ -10,6 +10,11 @@ import Header from './header'
 import Content from './content'
 import Footer from './footer'
 import Sider from './sider'
+import Tab from './tab'
+import TabNav from './tab-nav'
+import TabItem from './tab-item'
+import TabContent from './tab-content'
+import TabPanel from './tab-panel'
 
 import chai from 'chai'
 import spies from 'chai-spies'
@@ -26,6 +31,11 @@ Vue.component('y-header', Header)
 Vue.component('y-content', Content)
 Vue.component('y-footer', Footer)
 Vue.component('y-sider', Sider)
+Vue.component('y-tab', Tab)
+Vue.component('y-tab-nav', TabNav)
+Vue.component('y-tab-item', TabItem)
+Vue.component('y-tab-content', TabContent)
+Vue.component('y-tab-panel', TabPanel)
 new Vue({
     el: '#app',
     data: {
