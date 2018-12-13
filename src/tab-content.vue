@@ -11,5 +11,7 @@
 </script>
 
 <style scoped lang="scss">
-
+    .tab-content {
+        padding: 1em;
+    }
 </style>

@@ -11,5 +11,6 @@
 </script>
 
 <style scoped lang="scss">
-
+    .tab {
+    }
 </style>
