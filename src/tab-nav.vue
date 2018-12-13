@@ -36,6 +36,7 @@
         position: relative;
 
         > .line {
+            transition: all 0.5s;
             border: 1px solid $line-color;
             position: absolute;
             bottom: 0;
