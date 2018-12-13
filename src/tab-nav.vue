@@ -1,7 +1,7 @@
 <template>
     <div class="tab-nav">
         <slot></slot>
-        <div class="line"></div>
+        <div class="line" ref="line"></div>
         <div class="button">
             <slot name="button"></slot>
         </div>
@@ -10,7 +10,17 @@
 
 <script>
     export default {
-        name: "YTabNav"
+        name: "YTabNav",
+        inject: ['eventBus'],
+        mounted() {
+            const {eventBus} = this
+            eventBus.$on('updated:tab', (tabItemName, vm) => {
+                const { left, width } = vm.$el.getBoundingClientRect()
+                const lineNode = this.$refs.line
+                lineNode.style.width = `${width}px`
+                lineNode.style.left = `${left}px`
+            })
+        }
     }
 </script>
 
@@ -24,12 +34,13 @@
         border-bottom: 1px solid $border-bottom-color;
         height: $tab-nav-height;
         position: relative;
+
         > .line {
             border: 1px solid $line-color;
             position: absolute;
             bottom: 0;
-            width: 60px;
         }
+
         > .button {
             margin-left: auto;
         }

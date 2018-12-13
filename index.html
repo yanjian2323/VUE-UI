@@ -28,6 +28,7 @@
         }
 
         body {
+            margin: 0;
             font-size: var(--font-size);
         }
 
@@ -53,17 +54,18 @@
 <body>
 
 <div id="app">
-    <y-tab>
+    {{selectedTab}}
+    <y-tab :selected.sync="selectedTab">
         <y-tab-nav>
-            <y-tab-item>美女</y-tab-item>
-            <y-tab-item>帅哥</y-tab-item>
-            <y-tab-item>其他</y-tab-item>
+            <y-tab-item name="sports">体育</y-tab-item>
+            <y-tab-item name="financial">金融</y-tab-item>
+            <y-tab-item name="other">其他</y-tab-item>
             <button slot="button">操作</button>
         </y-tab-nav>
        <y-tab-content>
-           <y-tab-panel>this is 美女</y-tab-panel>
-           <y-tab-panel>this is 帅哥</y-tab-panel>
-           <y-tab-panel>this is 其他</y-tab-panel>
+           <y-tab-panel name="sports">this is 体育板块</y-tab-panel>
+           <y-tab-panel name="financial">this is 金融板块</y-tab-panel>
+           <y-tab-panel name="other">this is 其他板块</y-tab-panel>
        </y-tab-content>
     </y-tab>
 </div>

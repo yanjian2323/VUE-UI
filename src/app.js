@@ -40,6 +40,7 @@ new Vue({
     el: '#app',
     data: {
         loading: false,
-        message: '1'
+        message: '1',
+        selectedTab: 'financial'
     }
 });
