@@ -15,6 +15,8 @@ import TabNav from './tab-nav'
 import TabItem from './tab-item'
 import TabContent from './tab-content'
 import TabPanel from './tab-panel'
+import Collapse from './collapse'
+import CollapseItem from './collapsee-item'
 
 import chai from 'chai'
 import spies from 'chai-spies'
@@ -36,6 +38,8 @@ Vue.component('y-tab-nav', TabNav)
 Vue.component('y-tab-item', TabItem)
 Vue.component('y-tab-content', TabContent)
 Vue.component('y-tab-panel', TabPanel)
+Vue.component('y-collapse', Collapse)
+Vue.component('y-collapse-item', CollapseItem)
 new Vue({
     el: '#app',
     data: {
