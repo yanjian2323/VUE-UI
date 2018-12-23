@@ -43,6 +43,6 @@ Vue.component('y-collapse-item', CollapseItem)
 new Vue({
     el: '#app',
     data: {
-        selectedItem: '1'
+        selectedItems: ['2']
     }
 });

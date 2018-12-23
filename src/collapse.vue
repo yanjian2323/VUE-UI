@@ -6,26 +6,46 @@
 
 <script>
     import Vue from 'vue'
+
     export default {
         name: "YCollapse",
         props: {
             selected: {
-                type: String
+                type: Array,
+            },
+            single: {
+                type: Boolean,
             }
         },
-        provide () {
-            const { eventBus } = this
+        provide() {
+            const {eventBus} = this
             return {
-               eventBus,
+                eventBus,
             }
         },
-        data () {
-           return {
-               eventBus: new Vue()
-           }
+        data() {
+            return {
+                eventBus: new Vue(),
+                selectedArray: this.selected
+            }
         },
         mounted() {
-           this.eventBus.$emit('update:selected', this.selected)
+            const { eventBus, single } = this
+            let { selectedArray } = this
+            eventBus.$on('addItem', (name) => {
+                if (single) {
+                    selectedArray = []
+                }
+                selectedArray.push(name)
+                eventBus.$emit('update:selected', selectedArray)
+            })
+            eventBus.$on('removeItem', (name) => {
+                const { selectedArray } = this
+                const index = selectedArray.indexOf(name)
+                selectedArray.splice(index, 1)
+                eventBus.$emit('update:selected', selectedArray)
+            })
+            eventBus.$emit('update:selected', selectedArray)
         }
     }
 </script>

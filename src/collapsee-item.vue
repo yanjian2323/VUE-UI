@@ -27,21 +27,21 @@
             }
         },
         mounted() {
-            this.eventBus.$on('update:selected', (name) => {
-                if (this.name !== name) {
-                    this.visible = false
-                } else {
+            this.eventBus.$on('update:selected', (selectedNames) => {
+                if (selectedNames.includes(this.name)) {
                     this.visible = true
+                } else {
+                    this.visible = false
                 }
             })
         },
         methods: {
             toggle() {
-                const {visible, eventBus, name} = this
-                if (!visible) {
-                    eventBus.$emit('update:selected', name)
+                const {eventBus, visible, name} = this
+                if (visible) {
+                    eventBus.$emit('removeItem', name)
                 } else {
-                    this.visible = false
+                    eventBus.$emit('addItem', name)
                 }
             }
         }
