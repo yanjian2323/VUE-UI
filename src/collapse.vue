@@ -38,12 +38,14 @@
                 }
                 selectedArray.push(name)
                 eventBus.$emit('update:selected', selectedArray)
+                this.$emit('update:selected', selectedArray)
             })
             eventBus.$on('removeItem', (name) => {
                 const { selectedArray } = this
                 const index = selectedArray.indexOf(name)
                 selectedArray.splice(index, 1)
                 eventBus.$emit('update:selected', selectedArray)
+                this.$emit('update:selected', selectedArray)
             })
             eventBus.$emit('update:selected', selectedArray)
         }
