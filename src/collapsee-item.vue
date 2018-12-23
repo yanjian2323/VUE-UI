@@ -1,6 +1,6 @@
 <template>
     <div class="collapse-item">
-        <div class="title">
+        <div class="title" @click="toggle">
             {{title}}
         </div>
         <div class="content" v-if="visible">
@@ -12,14 +12,37 @@
 <script>
     export default {
         name: "YCollapseItem",
+        inject: ['eventBus'],
         props: {
             title: {
+                type: String
+            },
+            name: {
                 type: String
             }
         },
         data() {
             return {
-                visible: true
+                visible: false
+            }
+        },
+        mounted() {
+            this.eventBus.$on('update:selected', (name) => {
+                if (this.name !== name) {
+                    this.visible = false
+                } else {
+                    this.visible = true
+                }
+            })
+        },
+        methods: {
+            toggle() {
+                const {visible, eventBus, name} = this
+                if (!visible) {
+                    eventBus.$emit('update:selected', name)
+                } else {
+                    this.visible = false
+                }
             }
         }
     }
@@ -36,6 +59,7 @@
             margin-left: -1px;
             margin-right: -1px;
         }
+
         > .content {
             padding: 4px 8px;
         }

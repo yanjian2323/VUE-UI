@@ -43,8 +43,6 @@ Vue.component('y-collapse-item', CollapseItem)
 new Vue({
     el: '#app',
     data: {
-        loading: false,
-        message: '1',
-        selectedTab: 'financial'
+        selectedItem: '1'
     }
 });
