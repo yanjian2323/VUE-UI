@@ -17,6 +17,7 @@ import TabContent from './tab-content'
 import TabPanel from './tab-panel'
 import Collapse from './collapse'
 import CollapseItem from './collapsee-item'
+import Toast from './toast'
 
 import chai from 'chai'
 import spies from 'chai-spies'
@@ -40,9 +41,10 @@ Vue.component('y-tab-content', TabContent)
 Vue.component('y-tab-panel', TabPanel)
 Vue.component('y-collapse', Collapse)
 Vue.component('y-collapse-item', CollapseItem)
+Vue.component('y-toast', Toast)
 new Vue({
     el: '#app',
     data: {
         selectedItems: ['2']
-    }
+    },
 });
