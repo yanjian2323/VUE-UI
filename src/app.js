@@ -49,7 +49,11 @@ new Vue({
     },
     methods: {
         showToast() {
-           this.$toast('更新成功')
+           this.$toast('更新成功', {
+               closeButton: {
+                   buttonText: 'OK',
+               }
+           })
         }
     }
 });

@@ -4,7 +4,7 @@
             <slot></slot>
         </div>
         <div class="line"></div>
-        <div class="button">关闭</div>
+        <div class="button" @click="onCloseClick">{{closeButton.buttonText}}</div>
     </div>
 </template>
 
@@ -19,19 +19,35 @@
             autoCloseDelay: {
                 type: Number,
                 default: 3,
+            },
+            closeButton: {
+                type: Object,
+                default() {
+                    return {
+                        buttonText: '关闭',
+                        closeCallback: null,
+                    }
+                }
             }
         },
         mounted() {
             if (this.autoClose) {
                 setTimeout(() => {
-                   this.close()
-                }, this.autoCloseDelay*1000)
+                    this.close()
+                }, this.autoCloseDelay * 1000)
             }
         },
         methods: {
-            close () {
+            close() {
                 this.$el.remove()
+                this.$emit('close')
                 this.$destroy()
+            },
+            onCloseClick() {
+                if (this.closeButton.closeCallback) {
+                    this.closeButton.closeCallback()
+                }
+                this.close()
             }
         }
     }
@@ -52,9 +68,11 @@
         padding: 0 16px;
         left: 50%;
         transform: translateX(-50%);
-        .message{
+
+        .message {
             padding: 8px 0;
         }
+
         .line {
             border-left: 1px solid $line-color;
             margin-left: 16px;
