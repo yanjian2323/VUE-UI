@@ -1,10 +1,12 @@
 <template>
-    <div class="toast" :class="[positionCls]">
-        <div class="message">
-            <slot></slot>
+    <div class="toast-box" :class="[positionCls]">
+        <div class="toast">
+            <div class="message">
+                <slot></slot>
+            </div>
+            <div class="line"></div>
+            <div class="button" @click="onCloseClick">{{closeButton.buttonText}}</div>
         </div>
-        <div class="line"></div>
-        <div class="button" @click="onCloseClick">{{closeButton.buttonText}}</div>
     </div>
 </template>
 
@@ -70,29 +72,47 @@
     $toast-shadow-color: rgba(0, 0, 0, 0.50);
     $font-size: 14px;
     $line-color: #666;
-    .toast {
-        font-size: $font-size;
-        color: #fff;
-        background: $toast-bg-color;
-        box-shadow: 0px 0px 3px 0px $toast-shadow-color;
-        display: flex;
+    $animation-duration: 500ms;
+    $border-radius: 4px;
+    .toast-box {
         position: fixed;
-        padding: 0 16px;
         left: 50%;
         transform: translateX(-50%);
-
         &.toast-top {
             top: 0;
+            .toast{
+                animation: slide-up $animation-duration;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
         }
-
         &.toast-middle {
             top: 50%;
             transform: translate(-50%,-50%);
+            .toast{
+                animation: fade-in $animation-duration;
+            }
         }
 
         &.toast-bottom {
             bottom: 0;
+            .toast{
+                animation: slide-down $animation-duration;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
         }
+    }
+
+    .toast {
+        font-size: $font-size;
+        color: #fff;
+        background: $toast-bg-color;
+        border-radius: $border-radius;
+        box-shadow: 0px 0px 3px 0px $toast-shadow-color;
+        display: flex;
+        padding: 0 16px;
+
 
         .message {
             padding: 8px 0;
@@ -107,6 +127,35 @@
         .button {
             display: flex;
             align-items: center;
+        }
+    }
+
+    @keyframes slide-up {
+        0% {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes slide-down {
+        0% {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 </style>
