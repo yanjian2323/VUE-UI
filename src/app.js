@@ -48,12 +48,23 @@ new Vue({
         selectedItems: ['2']
     },
     methods: {
-        showToast() {
+        showToast(position) {
            this.$toast('更新成功', {
+               autoClose: false,
                closeButton: {
                    buttonText: 'OK',
-               }
+               },
+               position,
            })
-        }
+        },
+        showToastUp () {
+            this.showToast('top')
+        },
+        showToastMiddle () {
+            this.showToast('middle')
+        },
+        showToastBottom () {
+            this.showToast('bottom')
+        },
     }
 });

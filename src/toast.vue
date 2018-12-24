@@ -1,5 +1,5 @@
 <template>
-    <div class="toast">
+    <div class="toast" :class="[positionCls]">
         <div class="message">
             <slot></slot>
         </div>
@@ -28,6 +28,18 @@
                         closeCallback: null,
                     }
                 }
+            },
+            position: {
+                type: String,
+                default: 'top',
+                validator(val) {
+                    return ['top', 'middle', 'bottom'].includes(val)
+                }
+            }
+        },
+        computed: {
+            positionCls() {
+                return `toast-${this.position}`
             }
         },
         mounted() {
@@ -68,6 +80,19 @@
         padding: 0 16px;
         left: 50%;
         transform: translateX(-50%);
+
+        &.toast-top {
+            top: 0;
+        }
+
+        &.toast-middle {
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        &.toast-bottom {
+            bottom: 0;
+        }
 
         .message {
             padding: 8px 0;
