@@ -50,24 +50,8 @@ new Vue({
         selectedItems: ['2']
     },
     methods: {
-        showToast(position) {
-           this.$toast('<strong>添加成功!</strong>', {
-               autoClose: false,
-               closeButton: {
-                   buttonText: 'OK',
-               },
-               position,
-               enableHtml: true,
-           })
-        },
-        showToastUp () {
-            this.showToast('top')
-        },
-        showToastMiddle () {
-            this.showToast('middle')
-        },
-        showToastBottom () {
-            this.showToast('bottom')
-        },
+       test () {
+           console.log('test');
+       }
     }
 });

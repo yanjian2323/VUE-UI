@@ -30,7 +30,7 @@
         body {
             margin: 0;
             font-size: var(--font-size);
-            margin: 50px;
+            padding: 50px;
             border: 1px solid green;
         }
 
@@ -53,9 +53,9 @@
         }
     </style>
 </head>
-<body>
+<body >
 
-<div id="app">
+<div id="app" style="border:1px solid red;overflow: hidden;" @click="test">
     <y-popover>
         <div slot="content">this is content</div>
         <span>click me</span>
