@@ -1,6 +1,6 @@
 <template>
-    <div class="popover">
-        <div class="pop-content" v-if="visible" ref="popContent" @click.stop>
+    <div class="popover" ref="popover">
+        <div class="pop-content" v-if="visible" ref="popContent">
             <slot name="content"></slot>
         </div>
         <div class="text" @click="show" ref="text">
@@ -26,10 +26,15 @@
                 this.visible = !this.visible;
 
                 if (this.visible) {
-                    this.clickFn = () => {
-                        console.log('document的click触发');
+                    this.clickFn = (e) => {
+                        const targetEle = e.target
+                        // 如果点击了弹出的pop什么都不做
+                        if (this.$refs.popContent.contains(targetEle)) {
+                            return
+                        }
                         this.visible = false;
                         document.removeEventListener('click', this.clickFn)
+                        console.log('触发document的click');
                     }
                     this.$nextTick(() => {
                         const popContent = this.$refs.popContent
