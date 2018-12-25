@@ -1,7 +1,9 @@
 <template>
     <div class="toast-box" :class="[positionCls]">
         <div class="toast">
-            <div class="message">
+            <div v-if="enableHtml" class="message" v-html="$slots.default[0]">
+            </div>
+            <div v-else class="message">
                 <slot></slot>
             </div>
             <div class="line"></div>
@@ -37,6 +39,10 @@
                 validator(val) {
                     return ['top', 'middle', 'bottom'].includes(val)
                 }
+            },
+            enableHtml: {
+                type: Boolean,
+                default: false,
             }
         },
         computed: {

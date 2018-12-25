@@ -49,12 +49,13 @@ new Vue({
     },
     methods: {
         showToast(position) {
-           this.$toast('更新成功', {
+           this.$toast('<strong>添加成功!</strong>', {
                autoClose: false,
                closeButton: {
                    buttonText: 'OK',
                },
                position,
+               enableHtml: true,
            })
         },
         showToastUp () {
