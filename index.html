@@ -31,6 +31,7 @@
             margin: 0;
             font-size: var(--font-size);
             margin: 50px;
+            border: 1px solid green;
         }
 
         .column {
@@ -55,9 +56,10 @@
 <body>
 
 <div id="app">
-    <button @click="showToastUp">在上面</button>
-    <button @click="showToastMiddle">在中间</button>
-    <button @click="showToastBottom">在下面</button>
+    <y-popover>
+        <div slot="content">this is content</div>
+        <span>click me</span>
+    </y-popover>
 </div>
 <script src="src/app.js"></script>
 <script src="//at.alicdn.com/t/font_936378_wymsm87uqni.js"></script>
