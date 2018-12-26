@@ -31,7 +31,7 @@
             margin: 0;
             font-size: var(--font-size);
             padding: 50px;
-            border: 1px solid green;
+            /*border: 1px solid green;*/
         }
 
         .column {
@@ -55,15 +55,15 @@
 </head>
 <body >
 
-<div id="app" style="border:1px solid red;overflow: hidden;" @click="test">
+<div id="app" style="border:1px solid transparent;overflow: hidden;" @click="test">
     <y-popover>
         <div slot="content">this is content</div>
-        <span>click me</span>
+        <button>点击</button>
     </y-popover>
-     <y-popover>
-        <div slot="content">this is content</div>
-        <span>click me</span>
-    </y-popover>
+     <!--<y-popover>-->
+        <!--<div slot="content">this is content</div>-->
+         <!--<button>点击</button>-->
+    <!--</y-popover>-->
 </div>
 <script src="src/app.js"></script>
 <script src="//at.alicdn.com/t/font_936378_wymsm87uqni.js"></script>

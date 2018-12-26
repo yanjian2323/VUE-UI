@@ -24,7 +24,7 @@
                 const scrollY = window.scrollY
                 const {left, top, height} = this.$refs.text.getBoundingClientRect()
                 popContent.style.left = `${left + scrollX}px`
-                popContent.style.top = `${top + scrollY - height}px`
+                popContent.style.top = `${top + scrollY}px`
                 document.body.appendChild(popContent)
             },
             onClickDocument(e) {
@@ -59,12 +59,35 @@
 </script>
 
 <style scoped lang="scss">
+    $pop-border-color: #333;
+    $pop-border-radius: 4px;
     .popover {
         display: inline-block;
     }
 
     .pop-content {
-        border: 1px solid red;
+        border: 1px solid $pop-border-color;
+        border-radius: $pop-border-radius;
+        transform: translateY(-100%);
         position: absolute;
+        padding: .5em 1em;
+        max-width: 20em;
+        word-break: break-all;
+        margin-top: -10px;
+        &::before,
+        &::after{
+            content: '';
+            position: absolute;
+            left: 10px;
+            border: 10px solid transparent;
+        }
+        &::before{
+            top: 100%;
+            border-top-color: #000;
+        }
+        &::after{
+            top: calc(100% - 1px);
+            border-top-color: #fff;
+        }
     }
 </style>
