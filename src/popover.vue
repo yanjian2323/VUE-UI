@@ -15,7 +15,6 @@
         data() {
             return {
                 visible: false,
-                onDocumentClick: null,
             }
         },
         methods: {
@@ -28,29 +27,31 @@
                 popContent.style.top = `${top + scrollY - height}px`
                 document.body.appendChild(popContent)
             },
-            removeDocumentEvent() {
-                document.removeEventListener('click', this.onDocumentClick)
-            },
-            addDocumentEvent(e) {
+            onClickDocument(e) {
                 const targetEle = e.target
                 // 如果点击了弹出的pop什么都不做
                 if (this.$refs.popContent.contains(targetEle)) {
                     return
                 }
-                this.removeDocumentEvent()
-                this.visible = false;
+                this.close()
                 console.log('触发document的click');
             },
+            close() {
+                this.visible = false
+                document.removeEventListener('click', this.onClickDocument)
+            },
+            open() {
+                this.visible = true
+                this.$nextTick(() => {
+                    this.setPopContentPosition()
+                    document.addEventListener('click', this.onClickDocument)
+                })
+            },
             onTrigger() {
-                this.visible = !this.visible;
-                this.onDocumentClick = this.addDocumentEvent
                 if (this.visible) {
-                    this.$nextTick(() => {
-                        this.setPopContentPosition()
-                        document.addEventListener('click', this.onDocumentClick)
-                    })
+                    this.close()
                 } else {
-                    this.removeDocumentEvent()
+                    this.open()
                 }
             }
         }
