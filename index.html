@@ -57,13 +57,21 @@
 
 <div id="app" style="border:1px solid transparent;overflow: hidden;" @click="test">
     <y-popover>
-        <div slot="content">this is content</div>
-        <button>点击</button>
+        <div slot="content">this is top</div>
+        <button>向上</button>
     </y-popover>
-     <!--<y-popover>-->
-        <!--<div slot="content">this is content</div>-->
-         <!--<button>点击</button>-->
-    <!--</y-popover>-->
+     <y-popover position="bottom">
+        <div slot="content">this is bottom</div>
+         <button>向下</button>
+    </y-popover>
+    <y-popover position="left">
+        <div slot="content" >this is left</div>
+         <button>向左</button>
+    </y-popover>
+    <y-popover position="right">
+        <div slot="content">this is right</div>
+         <button>向右</button>
+    </y-popover>
 </div>
 <script src="src/app.js"></script>
 <script src="//at.alicdn.com/t/font_936378_wymsm87uqni.js"></script>
